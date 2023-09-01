@@ -88,7 +88,8 @@ const onSubmit = () => {
     background: linear-gradient(135deg, #f2e9e4, #eadfe8, #f2e9e4, #eadfe8);
     .login-card {
         background-color: #fff;
-        height: 500px;
+        max-height: 500px;
+        max-width: 900px;
         border-radius: 60px 5px 60px 5px;
         display: flex;
         overflow: hidden;
