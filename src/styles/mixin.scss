@@ -1,0 +1,20 @@
+@mixin flex ($al: false, $jc: false, $row: row) {
+	display: flex;
+	flex-direction: $row;
+	@if ($al) {
+		align-items: $al;
+	}
+	@if ($jc) {
+		justify-content: $jc;
+	}
+}
+
+@mixin ellipse($clamp: 1) {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: -webkit-box;
+	word-break: break-all;
+	-webkit-line-clamp: $clamp;
+	-webkit-box-orient: vertical;
+}
+
