@@ -41,7 +41,7 @@ pnpm run dev
 vue3-SoloCove 对比其他开源 admin 框架有如下优势:
 1. 简单易上手 集成基础模板可以快速开发
 1. 支持前端控制路由权限 intelligence、后端控制路由权限 all 模式
-2. 提供 功能模块 如xlsx，word，等表格导出集成功能
+2. 提供 功能模块 如xlsx，word，等表格导出集成功能（未开发）
 4. 支持 scss 自动排序，eslint 自动修复
 5. axios 精细化封装，支持多数据源、多成功 code 数组，支持 application/json;charset=UTF-8、application/x-www-form-urlencoded;charset=UTF-8 多种传参方式
 6. 支持登录RSA加密
@@ -52,6 +52,8 @@ vue3-SoloCove-Element-UI 使用注意事项:
 1. 项目默认使用lf换行符而非crlf换行符，新建文件时请注意选择文件换行符
 2. 项目使用的是要求最宽泛的MIT开源协议，保留MIT开源协议即可免费商用
 3. 个人开发项目还在维护开发，欢迎反馈问题
+4. 没有封装过多的组件或其他，就是基础的框架，非常方便二次修改，同时色彩也是我随便配置的，改动也是很方便的。
+5. 图标使用的就是Element-plus的图标
 ```
 
 

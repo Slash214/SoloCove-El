@@ -24,6 +24,12 @@ const Elements: Array<RouteRecordRaw> = [
 				name: 'table',
 				meta: { title: '表格', keepAlive: false, icon: 'Document' },
 				component: () => import('views/element/table.vue')
+			},
+			{
+				path: 'upload',
+				name: 'upload',
+				meta: { title: '上传', keepAlive: false, icon: 'Upload' },
+				component: () => import('views/element/upload.vue')
 			}
 		]
 	},
