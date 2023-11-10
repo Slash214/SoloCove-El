@@ -9,8 +9,11 @@
         :collapse-transition="false"
     >
         <div class="logo">
-            <p v-if="!useStore.isCollapse" class="logo-text">SOLOCOVE</p>
-            <img v-else class="logo-images" src="@/assets/images/logo.png" alt="" />
+            <div v-if="!useStore.isCollapse" class="logo-info">
+                <img src="@/assets/images/logo.png" alt="logo" />
+                <p class="logo-text">SOLOCOVE</p>
+            </div>
+            <img v-else class="logo-images" src="@/assets/images/logo.png" alt="logo" />
         </div>
         <menu-item v-for="(item, key) in allRoutes" :menu="item" :key="key"></menu-item>
     </el-menu>
@@ -75,25 +78,31 @@ $width: 240px;
 $widths: 100px;
 .layout-menu {
     height: 100%;
-    border: none;
+    border-left: 1px solid #bbb;
     // background: linear-gradient(120deg, #3494e6, #ec6ead);
     // background: linear-gradient(120deg, #74ebd5, #9face6);
     animation: gradientAnimation 3s ease infinite;
     .logo {
-        background: linear-gradient(120deg, #3494e6, #ec6ead);
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        // background: linear-gradient(120deg, #3494e6, #ec6ead);
+        color: #6cce25;
+        @include flex(center, center);
         animation: gradientAnimation 3s ease infinite;
         height: 70px;
         background-size: 200% 200%;
-        .logo-images {
-            width: 50px;
-            height: 50px;
+        .logo-info {
+            @include flex(center);
+            img {
+                width: 40px;
+                height: 40px;
+            }
+            .logo-text {
+                font-size: 24px;
+                padding-left: 6px;
+            }
         }
-        .logo-text {
-            font-size: 32px;
+        .logo-images {
+            width: 40px;
+            height: 40px;
         }
     }
     @keyframes gradientAnimation {
@@ -109,5 +118,3 @@ $widths: 100px;
     }
 }
 </style>
-
-

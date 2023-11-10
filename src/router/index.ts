@@ -8,7 +8,7 @@ import { System, Other, Elements } from './models'
 const routes: Array<RouteRecordRaw> = [
 	{
 		path: '/',
-		meta: { title: '首页', icon: 'HomeFilled', orderNo: 1 },
+		meta: { title: '首页', icon: 'Odometer', orderNo: 1 },
 		component: Layout,
 		redirect: '/index',
 		children: [

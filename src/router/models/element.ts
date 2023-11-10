@@ -10,7 +10,7 @@ const Elements: Array<RouteRecordRaw> = [
 	{
 		path: '/elements',
 		component: layout,
-		meta: { title: '组件', icon: 'Grid', activeMenu: true, orderNo: 1 },
+		meta: { title: '组件', icon: 'Files', activeMenu: true, orderNo: 1 },
 		redirect: '/elements/richtext',
 		children: [
 			{

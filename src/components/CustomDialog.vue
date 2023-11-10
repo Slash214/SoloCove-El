@@ -25,7 +25,7 @@ import { watchEffect, ref, defineProps, defineEmits, onBeforeUnmount } from 'vue
 
 /**
  * @typedef {Object} DialogProps
- * @property {boolean} modelValue - 控制对话框的显示与隐藏
+ * @property {boolean} modelValue - 控制对话框的显示与隐藏 支持双向绑定
  * @property {string} [title='弹窗标题'] - 对话框标题
  * @property {string|number} [width='50%'] - 对话框宽度
  * @property {Function} [beforeClose] - 对话框关闭前的回调函数，返回 `true` 允许关闭，返回 `false` 阻止关闭
