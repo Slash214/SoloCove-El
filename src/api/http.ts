@@ -1,8 +1,14 @@
+/**
+ * 网络请求 如果不喜欢可以自己去封装哦 ~ 
+ * 我这里就简单封装一下使用
+ */
 import axios, { AxiosInstance, AxiosResponse, AxiosError } from "axios";
 import { ElMessage } from 'element-plus'
 import { Storage } from '@/utils/cache'
 
-let baseURL = import.meta.env.VITE_BASE_URL
+// 我使用了mock的url
+const baseURL = 'https://www.fastmock.site/mock/108b4a1848464e2af37eb582a52cde97/el'
+// let baseURL = import.meta.env.VITE_BASE_URL
 
 const service: AxiosInstance = axios.create({
 	baseURL,
@@ -18,7 +24,7 @@ service.interceptors.request.use(
 		// TODO 在这里可以加上想要在请求发送前处理的逻辑
 		// TODO 比如 loading 等 
 		config.headers = {}
-		if (token) config.headers['magic-token'] = token
+		if (token) config.headers['token'] = token
 		return config
 	},
 	(error: AxiosError) => {

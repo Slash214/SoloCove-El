@@ -72,7 +72,7 @@ watchEffect(() => {
  * 处理对话框关闭
  * @param {Function} closeDialog - 关闭对话框的函数
  */
-const handleBeforeClose = closeDialog => {
+const handleBeforeClose = (closeDialog: any) => {
     if (props.beforeClose()) {
         closeDialog()
         emits('update:modelValue', false)
@@ -84,10 +84,6 @@ watchEffect(() => {
     emits('update:modelValue', localVisible.value)
 })
 
-// 在组件销毁前取消监听
-onBeforeUnmount(() => {
-    useDomCreate('dialogs', true)
-})
 </script>
 
 <style scoped></style>

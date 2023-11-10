@@ -77,15 +77,15 @@ $widths: 100px;
     height: 100%;
     border: none;
     // background: linear-gradient(120deg, #3494e6, #ec6ead);
-    background: linear-gradient(120deg, #74ebd5, #9face6);
+    // background: linear-gradient(120deg, #74ebd5, #9face6);
     animation: gradientAnimation 3s ease infinite;
     .logo {
-        // background: linear-gradient(120deg, #3494e6, #ec6ead);
+        background: linear-gradient(120deg, #3494e6, #ec6ead);
         color: #fff;
         display: flex;
         align-items: center;
         justify-content: center;
-        // animation: gradientAnimation 3s ease infinite;
+        animation: gradientAnimation 3s ease infinite;
         height: 70px;
         background-size: 200% 200%;
         .logo-images {
