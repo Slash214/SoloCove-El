@@ -6,7 +6,7 @@
     </div>
 
     <div class="list">
-        <div class="item" v-for="i in 8" :key="i">模块{{ i }}</div>
+        <div class="item" v-for="i in 8" :key="i">模块 {{ i }}</div>
     </div>
 
     <div class="middle flex">
@@ -83,6 +83,8 @@ $white: #fff;
     margin-bottom: 20px;
     background-color: #fff;
     color: #959595;
+    border-radius: 6px;
+    box-shadow: $shadow;
 }
 .list {
     display: flex;
@@ -91,6 +93,9 @@ $white: #fff;
         width: 23.5%;
         margin: 0 2% 2% 0;
         height: 10vh;
+        @include flex(center, center);
+        border-radius: 6px;
+        box-shadow: $shadow;
         background-color: #fff;
         &:nth-child(4n) {
             margin-right: 0;
@@ -101,6 +106,8 @@ $white: #fff;
 .middle {
     .common {
         background-color: $white;
+        border-radius: 6px;
+        box-shadow: $shadow;
         width: 49%;
         .title {
             padding: 20px 20px 0 20px;
@@ -108,11 +115,7 @@ $white: #fff;
         .plr {
             padding: 0 40px;
         }
-    }
-    .dependence {
-    }
-    .logs {
-    }
+    }   
 }
 .flex {
     @include flex(false, space-between);

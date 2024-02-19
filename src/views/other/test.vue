@@ -1,5 +1,5 @@
 <template>
-  <div>测试的</div>
+  <div class="safe_area">测试的</div>
 </template>
 
 <script setup lang="ts"></script>

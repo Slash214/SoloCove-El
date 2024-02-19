@@ -7,6 +7,8 @@
         :default-openeds="openeds"
         :collapse="useStore.isCollapse"
         :collapse-transition="false"
+        :background-color="menuBackgroundColor"
+        :text-color="menuTextColor"
     >
         <div class="logo">
             <div v-if="!useStore.isCollapse" class="logo-info">
@@ -28,6 +30,9 @@ import { MenuRoute } from '@/types'
 const route = useRoute()
 const router = useRouter()
 const useStore = useMenuStore()
+
+const menuBackgroundColor = '#1a2942'
+const menuTextColor = '#bbbbbb'
 
 // 默认打开菜单
 const openeds = ['/']
@@ -79,6 +84,8 @@ $widths: 100px;
 .layout-menu {
     height: 100%;
     border-left: 1px solid #bbb;
+    background-color: #1a2942;
+    color: #2a384f;
     // background: linear-gradient(120deg, #3494e6, #ec6ead);
     // background: linear-gradient(120deg, #74ebd5, #9face6);
     animation: gradientAnimation 3s ease infinite;
@@ -116,5 +123,18 @@ $widths: 100px;
             background-position: 0% 50%;
         }
     }
+}
+
+::v-deep .el-menu-item {
+    color: #bbbbbb;
+}
+
+::v-deep .el-submenu .el-menu-item.is-active {
+    background-color: #3b4b68;
+}
+
+::v-deep .el-menu-item.is-active {
+    color: #fff;
+    background-color: #2a384f;
 }
 </style>

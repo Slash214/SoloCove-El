@@ -1,7 +1,23 @@
 <template>
-    <div>富文本</div>
+    <div>
+        <quill-rich-text :type="'html'" @content="getContent"></quill-rich-text>
+    </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onMounted, ref } from 'vue'
 
-<style scoped></style>
+onMounted(() => { })
+
+const getContent = (val: any) => {
+    console.log(val)
+}
+</script>
+
+<style scoped>
+.editor {
+    background-color: #fff;
+    width: 100%;
+    height: 80vh;
+}
+</style>

@@ -15,7 +15,7 @@ const routes: Array<RouteRecordRaw> = [
 			{
 				path: 'index',
 				component: () => import('views/main/index.vue'),
-				meta: { title: '首页' },
+				meta: { title: '首页', activeMenu: true },
 			}
 		]
 	},

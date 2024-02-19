@@ -1,7 +1,7 @@
 <template>
     <div class="nav">
         <div class="nav-left">
-            <el-icon class="pointer mr20" size="20" @click="useStore.changeCollapse">
+            <el-icon class="pointer mr20" style="color: #2a384f;" size="20" @click="useStore.changeCollapse">
                 <Fold v-if="!useStore.isCollapse" />
                 <Expand v-if="useStore.isCollapse" />
             </el-icon>
@@ -14,20 +14,7 @@
                 <el-avatar
                     src="http://thirdqq.qlogo.cn/g?b=oidb&k=REYMpW1m0CGfb5pHYeaibvQ&s=100&t=1624209837"
                 ></el-avatar>
-                <el-dropdown class="ml20">
-                    <span class="el-dropdown-link">
-                        爱呵呵
-                        <el-icon class="el-icon--right">
-                            <arrow-down />
-                        </el-icon>
-                    </span>
-                    <template #dropdown>
-                        <el-dropdown-menu>
-                            <el-dropdown-item>个人中心</el-dropdown-item>
-                            <el-dropdown-item @click="isVisible = !isVisible">退出登陆</el-dropdown-item>
-                        </el-dropdown-menu>
-                    </template>
-                </el-dropdown>
+                <div class="ml20">爱呵呵</div>
             </div>
         </div>
     </div>
