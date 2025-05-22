@@ -84,7 +84,6 @@ $white: #fff;
     background-color: #fff;
     color: #959595;
     border-radius: 6px;
-    box-shadow: $shadow;
 }
 .list {
     display: flex;
@@ -93,9 +92,10 @@ $white: #fff;
         width: 23.5%;
         margin: 0 2% 2% 0;
         height: 10vh;
-        @include flex(center, center);
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border-radius: 6px;
-        box-shadow: $shadow;
         background-color: #fff;
         &:nth-child(4n) {
             margin-right: 0;
@@ -107,7 +107,7 @@ $white: #fff;
     .common {
         background-color: $white;
         border-radius: 6px;
-        box-shadow: $shadow;
+
         width: 49%;
         .title {
             padding: 20px 20px 0 20px;
@@ -115,9 +115,11 @@ $white: #fff;
         .plr {
             padding: 0 40px;
         }
-    }   
+    }
 }
 .flex {
-    @include flex(false, space-between);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 </style>

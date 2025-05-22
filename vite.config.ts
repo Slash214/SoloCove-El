@@ -6,7 +6,6 @@ import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 
-
 const pathSrc = path.resolve(__dirname, 'src')
 
 export default defineConfig({
@@ -29,13 +28,6 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src"),
       views: path.resolve(__dirname, "./src/views"),
-    }
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: '@import "@/styles/common.scss";'
-      }
     }
   },
   server: {

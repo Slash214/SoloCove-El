@@ -1,49 +1,26 @@
 <template>
-  <el-container class="layout">
-    <el-aside :style="{ 'width': useStore.isCollapse ? '70px' : '240px'}"><menus></menus></el-aside>
-    <el-container class="main">
-      <el-header>
-        <headers></headers>
-      </el-header>
-      <el-main>
-        <router-view></router-view>
-      </el-main>
-    </el-container>
-  </el-container>
+    <div class="flex h-screen bg-gray-100">
+        <Sidebar :info="userInfo"></Sidebar>
+
+        <!-- 主内容区域 -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <Headers :avatarUrl="userInfo.avatar"></Headers>
+
+            <!-- 主内容 -->
+            <main class="flex-1 overflow-y-auto p-4 bg-gray-100">
+                <div class="bg-white rounded-lg shadow p-6 min-h-[500px]">
+                    <router-view></router-view>
+                </div>
+            </main>
+        </div>
+    </div>
 </template>
 
-<script setup lang="ts">
-import menus from './menus/index.vue'
-import headers from './headers/index.vue'
-import { useMenuStore } from '@/store/menu'
+<script setup>
+import { Storage } from '@/utils/cache'
 
-const useStore = useMenuStore()
+import Sidebar from './Sidebar.vue'
+import Headers from './headers/index.vue'
 
-
+const userInfo = Storage.getItem('userInfo')
 </script>
-
-<style scoped lang="scss">
-.layout {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-
-  .el-aside {
-    color: #fff;
-    overflow-x: hidden;
-    transition: width cubic-bezier(0, 1.03, 0.1, 1.13) 0.3s;
-  }
-
-  .main {
-    .el-header {
-      width: 100%;
-      height: 70px;
-      background-color: #fff;
-    }
-
-    .el-main {
-      min-height: 80vh;
-    }
-  }
-}
-</style>

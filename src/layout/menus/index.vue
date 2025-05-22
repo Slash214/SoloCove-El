@@ -92,12 +92,17 @@ $widths: 100px;
     .logo {
         // background: linear-gradient(120deg, #3494e6, #ec6ead);
         color: #6cce25;
-        @include flex(center, center);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
         animation: gradientAnimation 3s ease infinite;
         height: 70px;
         background-size: 200% 200%;
         .logo-info {
-            @include flex(center);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             img {
                 width: 40px;
                 height: 40px;
