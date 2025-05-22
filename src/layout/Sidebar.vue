@@ -5,16 +5,42 @@
         :class="{ 'w-64': !collapsed, 'w-20': collapsed }"
     >
         <!-- 侧边栏头部 -->
-        <div class="flex items-center justify-between h-16 px-4 border-b border-gray-800">
-            <div class="flex items-center">
-                <!-- Logo -->
-                <img src="@/assets/svg/404.svg" alt="Logo" class="h-10 w-10" />
-                <span v-if="!collapsed" class="ml-3 text-xl font-semibold transition-opacity duration-300"
-                    >管理系统</span
-                >
+        <div
+            class="flex items-center h-16 border-b border-gray-800 transition-all duration-300"
+            :class="collapsed ? 'justify-center px-2' : 'justify-between px-4'"
+        >
+            <!-- Logo 区 -->
+            <div
+                class="flex items-center transition-all duration-300"
+                :class="collapsed ? 'justify-center w-full' : ''"
+            >
+                <img
+                    src="@/assets/images/logo.png"
+                    alt="Logo"
+                    class="transition-all duration-300"
+                    :class="collapsed ? 'h-6 w-6' : 'h-10 w-10'"
+                />
+                <!-- 只有展开时才显示文字 -->
+                <span v-if="!collapsed" class="ml-3 text-xl font-semibold transition-opacity duration-300">
+                    管理系统
+                </span>
             </div>
-            <button @click="toggleSidebar" class="p-1 rounded-md hover:bg-gray-800 focus:outline-none">
-                <component :is="collapsed ? ChevronRightIcon : ChevronLeftIcon" class="h-6 w-6" />
+
+            <!-- 折叠按钮 -->
+            <button
+                v-if="!collapsed"
+                @click="toggleSidebar"
+                class="p-1 rounded-md hover:bg-gray-800 focus:outline-none transition-colors duration-200"
+            >
+                <ChevronLeftIcon class="h-6 w-6 text-white" />
+            </button>
+
+            <button
+                v-else
+                @click="toggleSidebar"
+                class="p-1 rounded-md hover:bg-gray-800 focus:outline-none transition-colors duration-200"
+            >
+                <ChevronRightIcon class="h-6 w-6 text-white" />
             </button>
         </div>
 

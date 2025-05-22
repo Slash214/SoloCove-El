@@ -3,9 +3,9 @@
  * @description 负责导出路由模块
  */
 
-import System from "./system";
-import Other from "./other";
-import Elements from './element'
+import System from "./system.js";
+import Other from "./other.js";
+import Elements from './element.js'
 
 export {
 	System,
