@@ -4,6 +4,7 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
+import tailwindcss from '@tailwindcss/vite'
 
 
 const pathSrc = path.resolve(__dirname, 'src')
@@ -11,6 +12,7 @@ const pathSrc = path.resolve(__dirname, 'src')
 export default defineConfig({
   plugins: [
     vue(),
+    tailwindcss(),
     AutoImport({
       imports: ['vue'],
       resolvers: [
@@ -19,17 +21,14 @@ export default defineConfig({
       dts: path.resolve(pathSrc, 'auto-imports.d.ts'),
     }),
     Components({
-      resolvers: [
-        ElementPlusResolver()
-      ],
-      dts: path.resolve(pathSrc, 'auto-imports.d.ts'),
+      resolvers: [ElementPlusResolver()],
+      dts: path.resolve(pathSrc, 'components.d.ts'),
     }),
   ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
       views: path.resolve(__dirname, "./src/views"),
-      components: path.resolve(__dirname, "./src/components")
     }
   },
   css: {

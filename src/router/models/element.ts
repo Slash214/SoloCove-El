@@ -14,12 +14,6 @@ const Elements: Array<RouteRecordRaw> = [
 		redirect: '/elements/richtext',
 		children: [
 			{
-				path: 'richtext',
-				name: 'richtext',
-				meta: { title: '富文本', keepAlive: false, icon: 'Box' },
-				component: () => import('views/element/richtext.vue')
-			},
-			{
 				path: 'table',
 				name: 'table',
 				meta: { title: '表格', keepAlive: false, icon: 'Document' },
